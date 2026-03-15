@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Little Martha'S Dwell Well — Contact</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles.contact.css">
+</head>
+
+<body>
+
+	<div class="site">
+		<header>
+			<a class="brand" href="index.html">
+				<div class="logo">
+					<img src="img/arms icon.svg" class="logo" alt="logo">
+				</div>
+				<div>
+					<div class="title">LITTLE MARTHA'S</div>
+					<div class="subtitle">DWELL WELL</div>
+				</div>
+			</a>
+
+			<nav>
+				<a href="services.html">Services</a>
+				<a href="aboutus.html">About Us</a>
+				<a class="cta" href="contact.html">Contact</a>
+			</nav>
+
+			<button class="menu-btn" id="menuBtn">☰</button>
+		</header>
+
+		<div id="mobileMenu" class="mobile-menu">
+			<a href="services.html">Services</a>
+			<a href="aboutus.html">About Us</a>
+			<a href="contact.html">Contact</a>
+		</div>
+
+		<main>
+			<section id="contact">
+				<h1>Contact Us</h1>
+				<p>Please contact us for an estimate price for your project at <a
+						href="mailto:mbbudnowski@gmail.com">mbbudnowski@gmail.com</a>
+					or call
+					414-520-0950.</p>
+
+				<div class="contact-grid">
+					<form class="contact-form" onsubmit="sendEmail(event)" action="#" method="post">
+						<div class="form-row">
+							<label for="firstName">First Name</label>
+							<input id="firstName" name="firstName" type="text" required>
+						</div>
+
+						<div class="form-row">
+							<label for="lastName">Last Name</label>
+							<input id="lastName" name="lastName" type="text" required>
+						</div>
+
+						<div class="form-row">
+							<label for="email">Your Email</label>
+							<input id="email" name="email" type="email" required>
+						</div>
+
+						<div class="form-row">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="6" required></textarea>
+						</div>
+
+						<div class="form-row">
+							<button class="cta" type="submit">Send</button>
+						</div>
+					</form>
+
+					<div class="contact-image" aria-hidden="true">
+						<img src="img/logo.PNG" alt="Decorative image">
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer id="contact">
+			<div>
+				<strong>Contact</strong>
+				<p>Email: mbbudnowski@gmail.com</p>
+				<p>Phone: 414-520-0950</p>
+			</div>
+			<div class="footer-right">
+				© <span id="year"></span> Little Martha's Dwell Well
+			</div>
+		</footer>
+	</div>
+
+	<script>
+		function sendEmail(event) {
+			event.preventDefault();
+			const firstName = document.getElementById('firstName').value;
+			const lastName = document.getElementById('lastName').value;
+			const email = document.getElementById('email').value;
+			const message = document.getElementById('message').value;
+			const subject = `Contact from ${firstName} ${lastName}`;
+			const body = `From: ${email}\n\n${message}`;
+			const mailto = `mailto:mbbudnowski@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			window.location.href = mailto;
+		}
+
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		const btn = document.getElementById('menuBtn');
+		const menu = document.getElementById('mobileMenu');
+
+		btn.onclick = () => {
+			menu.classList.toggle('open');
+		};
+	</script>
+
+</body>
+
+</html>

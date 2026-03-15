@@ -1,0 +1,146 @@
+/* styles.index.css — page-specific styles for index.html */
+
+/* About (hero-like section) */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+  align-items: center;
+  background-color: var(--yellow);
+}
+
+.about img {
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--brand);
+}
+
+.eyebrow {
+  color: var(--brand);
+  font-weight: bold;
+}
+
+.about-buttons {
+  margin-top: 15px;
+}
+
+.about {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.about > * {
+  flex: 1 1 50%;
+  min-width: 0; /* allow children to shrink properly */
+}
+
+.about > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.about > div {
+  /* more breathing room between text and the section's colored background */
+  padding: 40px;
+}
+
+.about h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.15;
+  color: var(--brand);
+}
+
+.about p {
+  margin: 0;
+  padding-top: 8px;
+  line-height: 1.6;
+  color: var(--brand);
+}
+
+.about-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Index: services card styles (for index layout) */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px; /* give cards consistent height */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#services h2,
+.services h2 {
+  color: var(--brand);
+  margin-top: 40px;
+  font-size: 2em;
+}
+
+.card h3 {
+  color: var(--brand);
+  font-size: 1.50em;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.card img,
+.services img {
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about > * {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .about > div {
+    padding: 16px;
+  }
+
+  .about-buttons {
+    margin-top: 16px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+

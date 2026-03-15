@@ -1,0 +1,96 @@
+/* styles.contact.css — page-specific styles for contact.html (team) */
+
+.team {
+  margin-top: 40px;
+  /* center the whole team section and constrain its maximum width */
+  width: min(1100px, 95%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.team h2 {
+  color: var(--brand);
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.team-cards {
+  display: grid;
+  /* narrower cards while staying responsive; center items */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  justify-items: center;
+  justify-content: center;
+}
+
+.team-card {
+  background: var(--yellow);
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 420px; /* larger cards */
+  box-sizing: border-box;
+}
+
+.team-card img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.team-card-body .role {
+  margin: 0;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.team-card-body .name {
+  margin: 6px 0 0 0;
+  font-size: 1.4rem;
+}
+
+.team-card-body .intro {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .team {
+    width: 95%;
+    margin-top: 24px;
+  }
+
+  .team-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    max-width: 340px;
+    padding: 14px;
+  }
+
+  .team-card img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .team-card-body .name {
+    font-size: 1.1rem;
+  }
+
+  .team-card-body .intro {
+    font-size: 0.95rem;
+  }
+}

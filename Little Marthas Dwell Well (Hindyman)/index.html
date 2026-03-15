@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Little Martha'S Dwell Well — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.index.css">
+</head>
+
+<body>
+
+<div class="site">
+  <header>
+    <a class="brand" href="index.html">
+        <div class="logo">
+            <img src="img/arms icon.svg" class="logo" alt="logo">
+        </div>
+      <div>
+        <div class="title">LITTLE MARTHA'S</div>
+        <div class="subtitle">DWELL WELL</div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="services.html">Services</a>
+      <a href="aboutus.html">About Us</a>
+      <a class="cta" href="#contact">Contact</a>
+      <!-- <a  href="#book">Book Now</a> -->
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </header>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#book">Book</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <section class="about">
+    <div>
+        <h1>
+            A Family-Owned, Woman-Led Business Based in Milwaukee, WI
+        </h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+      <div class="about-buttons">
+        <a class="cta" href="#book">Book Now</a>
+        <a class="cta" href="#services">View Services</a>
+      </div>
+    </div>
+
+    <img  src="img/logo-white.PNG" alt="White Logo">
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Organization & Decluttering</h3>
+        <p>Reorganizating to reignite your love for your home.</p>
+        <img src="./img/organization-temp.jpg" alt="Organization">
+      </div>
+
+      <div class="card">
+        <h3>Redecorate</h3>
+        <p>Purchase new furniture and design your dream space.</p>
+        <img src="./img/decoration-temp.jpg" alt="Redecorate">
+      </div>
+
+      <div class="card">
+        <h3>Installations</h3>
+        <p>TV mounting, furniture assembly, shelving installs.</p>
+        <img src="./img/install-temp.jpg" alt="Installations">
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div>
+      <strong>Contact</strong>
+      <p>Email: 123@littlemarthasdwellwell.org</p>
+      <p>Phone: 123-456-7890</p>
+    </div>
+    <div class="footer-right">
+      © <span id="year"></span> Little Martha's Dwell Well
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+
+  btn.onclick = () => {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  };
+</script>
+
+</body>
+</html>

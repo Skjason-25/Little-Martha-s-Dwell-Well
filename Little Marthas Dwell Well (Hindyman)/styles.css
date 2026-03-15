@@ -1,0 +1,117 @@
+/* ==========================
+   styles.css (shared)
+   Contains global variables, base rules, header, footer, and small shared responsive rules.
+   Page-specific rules have been moved to styles.index.css, styles.services.css, styles.contact.css
+   ========================== */
+
+:root {
+  --brand: #406359;
+  --yellow:#eeeae3;
+  --dark: #222;
+  --muted: #666;
+  --bg: #fafafa;
+}
+
+/* Base */
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+.site {
+  margin: auto;
+  padding: 20px;
+}
+
+/* Global img fallback */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header (shared) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--yellow);
+  padding: 28px 24px;
+  border-radius: 10px;
+  width: min(1600px, 90%);
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 96px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.logo {
+  color: white;
+  width: 140px;
+  height: auto;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.brand .title {
+  font-size: 1.25rem;
+}
+
+.brand .subtitle {
+  font-size: 0.95rem;
+}
+
+.title { font-weight: 800; color: var(--brand); }
+.subtitle { color: var(--brand); font-size: 14px; }
+
+nav a { text-decoration: none; margin-left: 20px; font-weight: 700; color: var(--muted); font-size: 1rem; }
+
+.cta { background: var(--brand); color: white; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight:700; font-size:1rem; }
+
+.menu-btn { display: none; font-size: 22px; padding: 8px 12px; border: none; background: transparent; }
+
+/* Mobile menu (hidden by default; toggled via JS and shown on small screens) */
+.mobile-menu { display: none; }
+
+/* Footer (shared) */
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--yellow);
+  padding: 15px;
+  border-radius: 10px;
+  width: min(1600px, 90%);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+footer, footer strong, footer p, footer .footer-right { color: var(--brand); }
+.footer-right { align-self: flex-end; }
+
+/* Shared mobile responsive header/menu adjustments */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .menu-btn { display: block; }
+  header { padding: 16px 14px; min-height: 64px; }
+  .logo { width: 80px; }
+  .brand .title { font-size: 1rem; }
+  .brand .subtitle { font-size: 0.85rem; }
+  nav a { font-size: 0.95rem; margin-left: 12px; }
+  .cta { padding: 8px 12px; font-size: 0.95rem; }
+  .menu-btn { font-size: 20px; padding: 6px 10px; }
+}
+

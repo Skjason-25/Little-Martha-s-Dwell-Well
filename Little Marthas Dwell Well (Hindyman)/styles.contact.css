@@ -1,0 +1,74 @@
+/* styles.contact.css — page-specific styles for contact.html */
+
+/* Keep the contact section aligned with header/footer */
+#contact {
+  width: min(1600px, 90%);
+  margin: 18px auto;
+  box-sizing: border-box;
+  padding: 20px 24px;
+}
+
+#contact h1 { margin-top: 0; color: var(--brand); }
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+  max-width: 720px;
+}
+
+/* Layout: form left, image right */
+.contact-grid {
+  display: flex;
+  gap: 28px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+.contact-form { flex: 1 1 480px; }
+.contact-image { flex: 1 1 360px; display: flex; align-items: center; justify-content: center; }
+.contact-image img { width: 100%; max-width: 420px; border-radius: 10px; object-fit: cover; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+.contact-form .form-row { display: block; }
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--brand);
+  font-size: 0.95rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.contact-form textarea { resize: vertical; min-height: 140px; }
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(64,99,89,0.06);
+}
+
+.contact-form .cta {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+/* Make the send button align left on narrow screens */
+.contact-form .form-row:last-child { margin-top: 6px; }
+
+@media (max-width: 768px) {
+  #contact { padding: 14px; }
+  .contact-form { max-width: 100%; }
+  .contact-grid { flex-direction: column; }
+  .contact-image { order: 2; }
+}

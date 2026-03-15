@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Little Martha'S Dwell Well — Contact</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles.contact.css">
+</head>
+
+<body>
+
+<div class="site">
+	<header>
+		<a class="brand" href="index.html">
+				<div class="logo">
+						<img src="img/arms icon.svg" class="logo" alt="logo">
+				</div>
+			<div>
+				<div class="title">LITTLE MARTHA'S</div>
+				<div class="subtitle">DWELL WELL</div>
+			</div>
+		</a>
+
+		<nav>
+			<a href="services.html">Services</a>
+			<a href="aboutus.html">About Us</a>
+			<a class="cta" href="#contact">Contact</a>
+		</nav>
+
+		<button class="menu-btn" id="menuBtn">☰</button>
+	</header>
+
+	<div id="mobileMenu" class="mobile-menu">
+		<a href="index.html#services">Services</a>
+		<a href="index.html#about">About</a>
+		<a href="index.html#book">Book</a>
+		<a href="contact.html#contact">Contact</a>
+	</div>
+
+	<main>
+		<section id="contact">
+			<h1>Contact Us</h1>
+			<p>Please reach out at <a href="mailto:123@littlemarthasdwellwell.org">123@littlemarthasdwellwell.org</a> or call 123-456-7890.</p>
+
+			<div class="contact-grid">
+				<form class="contact-form" action="#" method="post">
+					<div class="form-row">
+						<label for="firstName">First Name</label>
+						<input id="firstName" name="firstName" type="text" required>
+					</div>
+
+					<div class="form-row">
+						<label for="lastName">Last Name</label>
+						<input id="lastName" name="lastName" type="text" required>
+					</div>
+
+					<div class="form-row">
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" required>
+					</div>
+
+					<div class="form-row">
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="6" required></textarea>
+					</div>
+
+					<div class="form-row">
+						<button class="cta" type="submit">Send</button>
+					</div>
+				</form>
+
+				<div class="contact-image" aria-hidden="true">
+					<img src="img/logo.PNG" alt="Decorative image">
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer id="contact">
+		<div>
+			<strong>Contact</strong>
+			<p>Email: 123@littlemarthasdwellwell.org</p>
+			<p>Phone: 123-456-7890</p>
+		</div>
+		<div class="footer-right">
+			© <span id="year"></span> Little Martha's Dwell Well
+		</div>
+	</footer>
+</div>
+
+<script>
+	document.getElementById('year').textContent = new Date().getFullYear();
+
+	const btn = document.getElementById('menuBtn');
+	const menu = document.getElementById('mobileMenu');
+
+	btn.onclick = () => {
+		menu.style.display = menu.style.display === "block" ? "none" : "block";
+	};
+</script>
+
+</body>
+</html>
+
