@@ -30,7 +30,7 @@
         <!-- <a  href="#book">Book Now</a> -->
       </nav>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button type="button" class="menu-btn" id="menuBtn">☰</button>
     </header>
 
     <div id="mobileMenu" class="mobile-menu">
@@ -56,12 +56,12 @@
         </p>
 
         <div class="about-buttons">
-          <a class="cta" href="#book">Book Now</a>
+          <a class="cta" href="contact.html">Book Now</a>
           <a class="cta" href="#services">View Services</a>
         </div>
       </div>
 
-      <img src="img/logo-white.PNG" alt="White Logo">
+      <img src="img/logo-white.PNG" alt="Logo-white">
     </section>
 
     <section id="services">
@@ -106,9 +106,27 @@
     const btn = document.getElementById('menuBtn');
     const menu = document.getElementById('mobileMenu');
 
-    btn.onclick = () => {
-      menu.classList.toggle('open');
-    };
+    if (btn) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+      });
+    }
+
+    // Close mobile menu when a link is clicked
+    const menuLinks = document.querySelectorAll('.mobile-menu a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    });
+
+    // Close mobile menu when close button is clicked
+    const closeBtn = document.getElementById('closeBtn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    }
   </script>
 
 </body>

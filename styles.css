@@ -80,7 +80,7 @@ nav a { text-decoration: none; margin-left: 20px; font-weight: 700; color: var(-
 
 .cta { background: var(--brand); color: white; padding: 12px 18px; border-radius: 8px; text-decoration: none; font-weight:700; font-size:1rem; }
 
-.menu-btn { display: none; font-size: 22px; padding: 8px 12px; border: none; background: transparent; }
+.menu-btn { display: none; font-size: 22px; padding: 8px 12px; border: none; background: transparent; color: var(--brand); }
 
 /* Mobile menu (hidden by default; toggled via JS and shown on small screens) */
 .mobile-menu { display: none; }
@@ -107,7 +107,7 @@ footer, footer strong, footer p, footer .footer-right { color: var(--brand); }
 @media (max-width: 768px) {
   nav { display: none; }
   .menu-btn { display: block; cursor: pointer; }
-  header { padding: 16px 14px; min-height: 64px; }
+  header { padding: 16px 14px; min-height: 64px; width: 100%; }
   .logo { width: 80px; }
   .brand .title { font-size: 1rem; }
   .brand .subtitle { font-size: 0.85rem; }
@@ -115,14 +115,12 @@ footer, footer strong, footer p, footer .footer-right { color: var(--brand); }
   .cta { padding: 8px 12px; font-size: 0.95rem; }
   .menu-btn { font-size: 20px; padding: 6px 10px; }
   .mobile-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    position: relative;
+    width: min(1600px, 90%);
+    margin: 0 auto;
     background-color: var(--yellow);
     border-radius: 0 0 10px 10px;
     padding: 10px 0;
-    z-index: 10;
     display: none;
   }
   .mobile-menu.open {
@@ -135,11 +133,24 @@ footer, footer strong, footer p, footer .footer-right { color: var(--brand); }
     text-decoration: none;
     font-weight: 700;
   }
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--brand);
+    cursor: pointer;
+    padding: 0;
+  }
   footer {
     flex-direction: column;
     gap: 10px;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    margin: 40px 0 0 0;
   }
-  .footer-right { align-self: center; }
+  .footer-right { align-self: flex-start; }
 }
 
