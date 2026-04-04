@@ -43,7 +43,7 @@
       <h2>About Us</h2>
       <div class="team-cards">
         <div class="team-card">
-          <img src="img/martie-temp.jpg" alt="Martie Budnowski">
+          <img src="img/Martie-greenshirt.jpeg" alt="Martie Budnowski">
           <div class="team-card-body">
             <h4 class="role">CEO</h4>
             <h3 class="name">Martie Budnowski</h3>
@@ -56,7 +56,7 @@
 
 
         <div class="team-card">
-          <img src="img/logo.PNG" alt="Scott Budnowski">
+          <img src="img/Scott-greenshirt.jpeg" alt="Scott Budnowski">
           <div class="team-card-body">
             <h4 class="role">Estimator, Builder</h4>
             <h3 class="name">Scott Budnowski</h3>
@@ -66,7 +66,7 @@
         </div>
 
         <div class="team-card">
-          <img src="img/Paul Budnowski_ Headshot.png" alt="Paul Budnowski">
+          <img src="img/Paul-greenshirt.jpeg" alt="Paul Budnowski">
           <div class="team-card-body">
             <h4 class="role">Lead Designer</h4>
             <h3 class="name">Paul Budnowski</h3>
@@ -78,7 +78,7 @@
         </div>
 
         <div class="team-card">
-          <img src="img/logo.PNG" alt="Jon Zimmerman">
+          <img src="img/John-greenshirt.jpeg" alt="Jon Zimmerman">
           <div class="team-card-body">
             <h4 class="role">General Contractor</h4>
             <h3 class="name">Jon Zimmerman</h3>
@@ -88,7 +88,7 @@
         </div>
 
         <div class="team-card">
-          <img src="img/logo.PNG" alt="Joseph Budnowski">
+          <img src="img/Jo-greenshirt.jpeg" alt="Joseph Budnowski">
           <div class="team-card-body">
             <h4 class="role">Landscaping</h4>
             <h3 class="name">Joseph Budnowski</h3>
@@ -96,6 +96,9 @@
               and appeal of our clients' properties.</p>
           </div>
         </div>
+      </div>
+      <div class="team-family">
+        <img src="img/family-greenshirt-serious.jpeg" alt="Family in green shirts">
       </div>
     </section>
 
@@ -121,6 +124,27 @@
     btn.onclick = () => {
       menu.classList.toggle('open');
     };
+
+    const familyImage = document.querySelector('.team-family img');
+    if (familyImage) {
+      const seriousSrc = familyImage.src;
+      const goofySrc = seriousSrc.replace('family-greenshirt-serious.jpeg', 'family-greenshirt-goofy.jpeg');
+      let isGoofy = false;
+
+      familyImage.addEventListener('mouseenter', () => {
+        familyImage.src = goofySrc;
+        isGoofy = true;
+      });
+      familyImage.addEventListener('mouseleave', () => {
+        familyImage.src = seriousSrc;
+        isGoofy = false;
+      });
+      familyImage.addEventListener('click', (event) => {
+        event.preventDefault();
+        familyImage.src = isGoofy ? seriousSrc : goofySrc;
+        isGoofy = !isGoofy;
+      });
+    }
   </script>
 
 </body>
